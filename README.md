@@ -1,4 +1,4 @@
-<img width="1042" height="308" alt="image" src="https://github.com/user-attachments/assets/73af73fb-3df6-4d8e-88e8-f6486e5da5a3" />**DarkSentinel - AI-Powered Dark Web Surveillance Tool**
+**DarkSentinel - AI-Powered Dark Web Surveillance Tool**
 
 DarkSentinel is a Python-based tool for monitoring dark web content, detecting high-risk activities, and issuing real-time alerts. It combines Tor-based anonymity, Natural Language Processing (NLP), and AI-powered image/video analysis to identify threats such as drug trafficking, child exploitation, cybercrime, and weapon smuggling.
 
