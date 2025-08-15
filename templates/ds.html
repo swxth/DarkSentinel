@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Sentinel</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="contentstyle.css">
+    <style>
+        body{
+            background-color:rgb(159, 123, 95);
+            color: rgb(59, 9, 9);
+            text-align: center;
+        }
+        a:link {
+  color:rgb(59, 9, 9);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color:rgb(59, 9, 9);
+  background-color: transparent;
+  text-decoration: underline;
+}
+.left, .right {
+  float: left;
+  width: 20%; /* The width is 20%, by default */
+}
+
+.main {
+  float: left;
+  width: 60%; /* The width is 60%, by default */
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+    </style>
+</head>
