@@ -66,8 +66,8 @@ def test_tor_connection():
 
 def send_alert_via_email(alert_message, recipient_email):
     sender_email = "darksentinaloff@gmail.com"  
-    mailjet_username = "8847706341347bbebb2ffc5d19e6f013"  
-    mailjet_api_key = "b421afdc4e232d301c1aa719d9e7cd63"  
+    mailjet_username = os.getenv("MAILJET_USERNAME")  
+    mailjet_api_key = os.getenv("MAILJET_API_KEY")  
     
     msg = MIMEMultipart()
     msg['From'] = sender_email
