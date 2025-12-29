@@ -7,16 +7,17 @@ DarkSentinel is a Python-based tool for monitoring dark web content, detecting h
 **1. Dark Web Scraping** :
 
 a. Collects content from predefined dark web URLs.
+b.Supports direct link scanning and keyword-based discovery.
 
 **2. Advanced Threat Detection**
 
 a. NLP to detect dangerous phrases, slang, and encoded data.
 
-b. Automatic translation of non-English text.
+b. Automatic detection and translation of non-English text.
 
 c. AI (CLIP model) to analyze images and videos for illicit content.
 
-d. Sentiment analysis (DistilBERT) for threat classification.
+d. Sentiment analysis (DistilBERT) for contextual threat classification.
 
 **Real-Time Alerts**
 
@@ -69,15 +70,30 @@ b. Continuous scanning loop with adjustable delay.
    
             pip install -r requirements.txt
 
-**4. Install and configure Tor**
+**4. Download NLP Resources (Required)**
+spaCy language model :
+            python -m spacy download en_core_web_sm
+NLTK tokenizer :
+            python - <<EOF
+            import nltk
+            nltk.download('punkt')
+            EOF
 
--> Install Tor.
+**5. Install and configure Tor**
 
--> Ensure Tor SOCKS5 proxy is running at 127.0.0.1:9050.
+-> Install Tor or Tor Browser.
+
+-> Ensure Tor is running with :
+   SOCKS5 Proxy → 127.0.0.1:9050
+   ControlPort → 127.0.0.1:9051 (optional, for identity rotation)
 
 -> Optionally configure the control port (9051) for identity rotation.
+   Example torrc confguration :
+            ControlPort 9051
+            HashedControlPassword <your_hashed_password>
 
-**5. Configure environment variables**
+
+**6. Configure environment variables**
 
 -> Add your Mailjet API keys and Tor password to the .env file:
 
@@ -85,21 +101,29 @@ b. Continuous scanning loop with adjustable delay.
               MAILJET_API_KEY=your_api_key
               TOR_PASSWORD=your_tor_password
 
+-> Do not commit .env to GitHub
+
 **Usage**
 
 Run the main script to start monitoring:
 
               python darksentinal.py
 
-Gist of what happens:
+**Gist of what happens:**
 
 1. Connects to Tor for anonymous requests.
 
 2. Monitors predefined dark web URLs.
 
-3. Scrapes content and analyzes it with NLP + AI vision.
+3. Scrapes content and performs :
+   
+   a. NLP Analysis
+   
+   b. Image / Video inspection
+   
+   c. Sentiment classification
 
-4. Generates alerts for suspicious activities:
+5. Generates alerts for suspicious activities:
 
    a. Saves to SQLite database (dark_web_alerts.db).
 
@@ -107,17 +131,23 @@ Gist of what happens:
 
    c. Sends email notifications for high-severity cases.
 
-5. Rotates Tor identity after each check for privacy.
+6. Rotates Tor identity after each check for privacy.
 
 **Tech Stack**
 
 **a. Language:** Python 3.13
 
-**b. Libraries:** requests, stem, spacy, googletrans, regex, transformers (DistilBERT), torch, Pillow, flask, langdetect
+**b. NLP:** spaCy, NLTK, langdetect, googletrans
 
-**c. Network:** Tor SOCKS5 Proxy (127.0.0.1:9050)
+**c. ML / AI:** Transformers (DistilBERT), CLIP, PyTorch
 
-**d. Alerts:** Mailjet SMTP API
+**d. Vision:** OpenCV, Pillow
+
+**e. Network:** Tor SOCKS5 Proxy (127.0.0.1:9050)
+
+**f. Database:** SQLite
+
+**g. Alerts:** Mailjet SMTP API
 
 **Sample Output**
 
@@ -137,6 +167,11 @@ Gist of what happens:
 
 <img width="960" height="506" alt="image" src="https://github.com/user-attachments/assets/3b786bb8-12d2-4869-971f-09dd14a5058c" />
 <img width="1042" height="308" alt="image" src="https://github.com/user-attachments/assets/58541c64-195f-4b2d-b0d1-fa4621f38b2e" />
+
+**Legal & Ethical Disclaimer**
+
+DarkSentinel is intended strictly for academic research, cybersecurity learning, and authorized investigations.
+Users are responsible for ensuring compliance with all applicable laws and ethical standards.
 
 **Author**
 
