@@ -57,7 +57,7 @@ b. Continuous scanning loop with adjustable delay.
 
 **1. Clone the repository**
 
-            git clone https://github.com/<your-username>/DarkSentinel.git
+            git clone https://github.com/swxth/DarkSentinel.git
             cd DarkSentinel
 
 **2. Create a virtual environment**
@@ -71,9 +71,13 @@ b. Continuous scanning loop with adjustable delay.
             pip install -r requirements.txt
 
 **4. Download NLP Resources (Required)**
+
 spaCy language model :
+
             python -m spacy download en_core_web_sm
+            
 NLTK tokenizer :
+
             python - <<EOF
             import nltk
             nltk.download('punkt')
@@ -84,11 +88,15 @@ NLTK tokenizer :
 -> Install Tor or Tor Browser.
 
 -> Ensure Tor is running with :
+
    SOCKS5 Proxy → 127.0.0.1:9050
+   
    ControlPort → 127.0.0.1:9051 (optional, for identity rotation)
 
 -> Optionally configure the control port (9051) for identity rotation.
+
    Example torrc confguration :
+   
             ControlPort 9051
             HashedControlPassword <your_hashed_password>
 
@@ -168,9 +176,11 @@ Run the main script to start monitoring:
 <img width="960" height="506" alt="image" src="https://github.com/user-attachments/assets/3b786bb8-12d2-4869-971f-09dd14a5058c" />
 <img width="1042" height="308" alt="image" src="https://github.com/user-attachments/assets/58541c64-195f-4b2d-b0d1-fa4621f38b2e" />
 
+
 **Legal & Ethical Disclaimer**
 
 DarkSentinel is intended strictly for academic research, cybersecurity learning, and authorized investigations.
+
 Users are responsible for ensuring compliance with all applicable laws and ethical standards.
 
 **Author**
