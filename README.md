@@ -7,6 +7,7 @@ DarkSentinel is a Python-based tool for monitoring dark web content, detecting h
 **1. Dark Web Scraping** :
 
 a. Collects content from predefined dark web URLs.
+
 b.Supports direct link scanning and keyword-based discovery.
 
 **2. Advanced Threat Detection**
@@ -103,11 +104,10 @@ NLTK tokenizer :
 
 **6. Configure environment variables**
 
--> Add your Mailjet API keys and Tor password to the .env file:
+-> Add your Mailjet API keys to the .env file:
 
               MAILJET_USERNAME=your_username
               MAILJET_API_KEY=your_api_key
-              TOR_PASSWORD=your_tor_password
 
 -> Do not commit .env to GitHub
 
@@ -179,9 +179,7 @@ Run the main script to start monitoring:
 
 **Legal & Ethical Disclaimer**
 
-DarkSentinel is intended strictly for academic research, cybersecurity learning, and authorized investigations.
-
-Users are responsible for ensuring compliance with all applicable laws and ethical standards.
+DarkSentinel is intended strictly for academic research, cybersecurity learning, and authorized investigations. Users are responsible for ensuring compliance with all applicable laws and ethical standards.
 
 **Author**
 
