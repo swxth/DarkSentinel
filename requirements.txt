@@ -1,0 +1,26 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+
+# Tor control
+stem>=1.8.2
+
+# NLP
+spacy>=3.7.2
+nltk>=3.8.1
+langdetect>=1.0.9
+googletrans==4.0.0-rc1
+
+# Transformers & ML
+transformers>=4.41.0
+torch>=2.2.0
+torchvision>=0.17.0
+tensorflow>=2.15.0
+
+# Image & Video Processing
+opencv-python>=4.9.0.80
+Pillow>=10.2.0
+numpy>=1.26.4
+
+# HuggingFace CLIP
+sentencepiece>=0.2.0
+protobuf>=4.25.3
